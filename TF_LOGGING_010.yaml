@@ -1,0 +1,27 @@
+---
+metadata:
+  name: Lambda Log JSON Format 
+  id: "CUSTOM_TF_LOGGING_010"
+  category: LOGGING
+  severity: HIGH
+definition:
+  cond_type: attribute
+  resource_types:
+    - AWS::Lambda::Function
+  attribute: LoggingConfig.LogFormat
+  operator: equals
+  value: "JSON"
+
+---
+metadata:
+  name: Lambda Log JSON Format 
+  id: CUSTOM_TF_LOGGING_010
+  category: LOGGING
+scope:
+  provider: aws
+definition:
+  cond_type: attribute
+  resource_types: aws_lambda_function
+  attribute: logging_config.log_format
+  operator: equals
+  value: JSON
